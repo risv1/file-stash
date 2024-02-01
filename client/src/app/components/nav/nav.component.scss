@@ -1,0 +1,38 @@
+$int1: #0C2D57;
+$int2: #ff774a; 
+$int3: #9df3fd;
+$int4: #EFECEC;
+
+@mixin flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar{
+    @include flex;
+    background-color: $int1;
+    color: $int2;
+    height: 10vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+  a{
+    color: $int2;
+    text-decoration: none;
+  }
+
+  .navbar-nav{
+    margin-left: auto;
+    padding-right: 2rem;
+    @include flex;
+    gap: 1.5rem;
+  }
+}

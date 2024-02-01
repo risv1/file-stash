@@ -1,0 +1,21 @@
+<div class="homeContainer">
+    <div class="intro">
+        <p id="heading">File Stash</p>
+        <p>File Stash is your go-to app for seamless file storage and organization. Effortlessly safeguard your
+            documents, photos, and videos with secure cloud storage, ensuring easy access</p>
+    </div>
+    <div class="fileUpload">
+        @if(!file){
+        <p>Upload file below: </p>
+        <div class="upload">
+            <input class="fileContainer" type="file" (change)="getFile($event)">
+        </div>
+        } @else {
+        <p>File: <span>{{file.name}}</span></p>
+        <div class="fileContainer">
+            <input type="file" (change)="getFile($event)">
+        </div>
+        <button (click)="file = undefined">Clear</button>
+        }
+    </div>
+</div>
