@@ -1,10 +1,10 @@
 <div>
     <nav class="navbar">
-        <a class="navbar-brand" href="#">File Stash</a>
+        <p (click)="goTo('/')" class="navbar-brand">File Stash</p>
         <div class="navbar-nav">
-            <a class="nav-item nav-link" routerLink="/home">Home</a>
-            <a class="nav-item nav-link" routerLink="/about">About</a>
-            <a class="nav-item nav-link" routerLink="/contact" >Contact</a>
+            <p (click)="goTo('/')" class="nav-link">Home</p>
+            <p (click)="goTo('/view')" class="nav-link">View</p>
+            <p (click)="goTo('/profile')" class="nav-link" >Profile</p>
         </div>
     </nav>
 </div>

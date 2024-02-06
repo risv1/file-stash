@@ -24,7 +24,11 @@ $int4: #EFECEC;
     width: 100%;
     z-index: 1;
 
-  a{
+    .navbar-brand{
+      cursor: pointer;
+    }
+
+  p{
     color: $int2;
     text-decoration: none;
   }
@@ -34,5 +38,10 @@ $int4: #EFECEC;
     padding-right: 2rem;
     @include flex;
     gap: 1.5rem;
+
+    .nav-link{
+      cursor: pointer;
+    }
+
   }
 }
