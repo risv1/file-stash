@@ -23,6 +23,9 @@ yarn-error.log
 
 .env
 
+# private key
+serviceAccountKey.json
+
 # Visual Studio Code
 .vscode
 !.vscode/settings.json
