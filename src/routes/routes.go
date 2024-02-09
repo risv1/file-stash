@@ -6,7 +6,5 @@ import (
 )
 
 func Setup(app *fiber.App){
-	app.Get("/", handlers.HelloWorld)
-	app.Post("/login", handlers.Login)
 	app.Post("/upload", handlers.StoreFile)
 }

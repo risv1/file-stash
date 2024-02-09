@@ -6,17 +6,12 @@ import (
 	"io"
 	"os"
 	"github.com/gofiber/fiber/v2"
-
 	firebase "firebase.google.com/go"
 	"github.com/google/uuid"
 	"github.com/joho/godotenv"
 	"google.golang.org/api/option"
 )
 
-func HelloWorld(c *fiber.Ctx) error {
-	return c.SendString("Hello, World!")
-}
-  
 func StoreFile(c *fiber.Ctx) error{
 	godotenv.Load(".env")
 
@@ -59,7 +54,7 @@ func StoreFile(c *fiber.Ctx) error{
 	defer writer.Close()
 
 	if _, err := io.Copy(writer, file); err != nil {
-		fmt.Println("error copying file to bucket: %v", err)
+		fmt.Printf("error copying file to bucket: %v", err)
 		return err
 	}
 
