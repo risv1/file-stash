@@ -1,0 +1,84 @@
+$int1: #0c2d57;
+$int2: #ff774a;
+$int3: #9df3fd;
+$int4: #efecec;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  @include flex;
+  background-color: $int2;
+
+  .login{
+    @include flex;
+    margin-top: 20vh;
+    width: 50vw;
+    height: 60vh;
+    background-color: $int1;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-radius: 15px;
+    border: 3px $int4 solid;
+
+    .labeltext{
+        color: $int3;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .details{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    h1{
+        color: $int4;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    input{
+        border-radius: 10px;
+        height: 7vh;
+        width: 20vw;
+        box-shadow: $int3 0px 0px 5px 0px;
+        border: $int3 1px solid;
+        font-size: 1rem;
+        color: $int3;
+        background-color: $int1;
+
+        &:focus{
+            outline: none;
+            border: $int3 1px solid;
+        }
+    }
+
+    button{
+        width: 10vw;
+        height: 8vh;
+        border-radius: 10px;
+        box-shadow: $int2 0px 0px 10px 0px;
+        border: none;
+        background-color: $int2;
+        color: $int4;
+        font-size: 1.2rem;
+        transition: ease-in-out 0.15s;
+        font-weight: bold;
+
+        &:hover{
+            background-color: $int4;
+            color: $int2;
+            cursor: pointer;
+        }
+    }
+  }
+}

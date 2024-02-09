@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent {
-
   constructor(private router: Router) { }
+
+  signedIn: boolean = false;
 
   goTo(route: string){
     this.router.navigate([route]);

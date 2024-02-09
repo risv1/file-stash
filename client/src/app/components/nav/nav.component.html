@@ -4,7 +4,12 @@
         <div class="navbar-nav">
             <p (click)="goTo('/')" class="nav-link">Home</p>
             <p (click)="goTo('/view')" class="nav-link">View</p>
-            <p (click)="goTo('/profile')" class="nav-link" >Profile</p>
+            @if(signedIn){
+                <p (click)="goTo('/profile')" class="nav-link" >Profile</p>
+            }@else {
+                <p (click)="goTo('/login')" class="nav-link">Login</p>
+            }
+
         </div>
     </nav>
 </div>

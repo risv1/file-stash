@@ -1,5 +1,14 @@
 <div class="container">
-    <input type="email" name="email" [(ngModel)]="email" />
-    <input type="password" name="password" [(ngModel)]="password" />
-    <button (click)="login()">Login</button>
+    <div class="login">
+        <h1>Profile</h1>
+        <div class="details">
+            @if(email=="" && password==""){
+                <h2>Enter your details</h2>
+            } @else {
+                <h2>{{email}}</h2>
+                <h2>{{password}}</h2>
+            }
+        </div>
+        <button (click)="signout()">Submit</button>
+    </div>
 </div>
