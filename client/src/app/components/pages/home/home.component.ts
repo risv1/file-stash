@@ -28,11 +28,11 @@ export class HomeComponent {
     this.http.post('http://localhost:8000/upload', formData)
       .subscribe({
         next: (response: any) => {
-          console.log('File uploaded', response);
-        }, error: (error: Error) => {
-          console.error('File upload failed', error);
+          console.log('Server Response:', response);
+        },
+        error: (error: any) => {
+          console.error('HTTP Error:', error);
         }
       });
   }
-
 }

@@ -1,8 +1,8 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   createUserWithEmailAndPassword,
-  getAuth,
+  Auth,
   signInWithEmailAndPassword,
 } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
@@ -19,10 +19,10 @@ export class LoginComponent {
 
   email: string = '';
   password: string = '';
+  auth = inject(Auth)
 
   register() {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, this.email, this.password)
+    createUserWithEmailAndPassword(this.auth, this.email, this.password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log('Login successful', userCredential);
@@ -30,14 +30,15 @@ export class LoginComponent {
       .catch((err) => {
         const errorCode = err.code;
         const errorMessage = err.message;
+        console.log('Error', errorCode, errorMessage);
       });
   }
 
   login() {
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, this.email, this.password)
+    signInWithEmailAndPassword(this.auth, this.email, this.password)
       .then((userCredential) => {
         const user = userCredential.user;
+        console.log('Login successful', userCredential);
       })
       .catch((error) => {
         const errorCode = error.code;

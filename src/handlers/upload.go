@@ -31,7 +31,6 @@ func StoreFile(c *fiber.Ctx) error{
 		fmt.Printf("error getting bucket handle: %v", err)
 	}
 
-	
 	fileHeader, err := c.FormFile("file")
 	if err != nil {
 		fmt.Printf("error retrieving file from form: %v", err)
@@ -58,5 +57,5 @@ func StoreFile(c *fiber.Ctx) error{
 		return err
 	}
 
-	return c.SendString("file uploaded successfully")
+	return c.JSON("file uploaded successfully!")
 }
