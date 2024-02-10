@@ -1,1 +1,11 @@
-<p>view works!</p>
+<div class="container">
+    <div class="files">
+        @for(file of files; track file){
+        <div class="file">
+            <a [href]="file.fileUrl" download="{{file.fileUrl}}">
+                {{file.fileName}}
+            </a>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,53 @@
+$int1: #0c2d57;
+$int2: #ff774a;
+$int3: #9df3fd;
+$int4: #efecec;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    @include flex;
+    background-color: $int2;
+
+    .files{
+        display: grid;
+        margin-top: 20vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        width: 80%;
+        padding: 2rem;
+        height: 60%;
+        overflow-y: auto;
+        padding: 20px;
+        background-color: $int1;
+        border-radius: 10px;
+        border: $int3 solid 3px;
+
+        .file{
+            width: 100%;
+            height: 60%;
+            padding: 20px;
+            background-color: black;
+            border-radius: 10px;
+            border: $int2 solid 2px;
+            box-shadow: $int4 0 0 10px 0;
+            transition: 0.3s;
+            @include flex;
+
+            a{
+                font-size: 1.2rem;
+                color: $int3;
+            }
+
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+}

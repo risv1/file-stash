@@ -46,6 +46,7 @@ $int4: #efecec;
         font-weight: 700;
     }
 
+
     input{
         border-radius: 10px;
         height: 7vh;
@@ -81,4 +82,9 @@ $int4: #efecec;
         }
     }
   }
+}
+
+
+h2{
+    color: $int3;
 }
