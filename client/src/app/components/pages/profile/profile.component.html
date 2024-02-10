@@ -2,10 +2,10 @@
     <div class="login">
         <h1>Profile</h1>
         <div class="details">
-            @if(email=="" && password==""){
+            @if(loggedUser?.email == null){
                 <h2>Enter your details</h2>
             } @else {
-                <h2>{{email}}</h2>
+                <h2>{{loggedUser?.email}}</h2>
             }
         </div>
         <button (click)="signout()">Sign out</button>

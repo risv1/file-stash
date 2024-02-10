@@ -1,4 +1,5 @@
 <div class="container">
+    @if(register == false){
     <div class="login">
         <h1>Login</h1>
         <div class="details">
@@ -6,7 +7,32 @@
             <input type="email" name="email" [(ngModel)]="email" />
             <label for="email" class="labeltext">Password</label>
             <input type="password" name="password" [(ngModel)]="password" />
+            <div class="buttons">
+                <button (click)="registerGoogle()">Sign in with Google</button>
+                <button (click)="registerEmailPass()">Submit</button>
+            </div>
         </div>
-        <button (click)="login()">Submit</button>
+    </div>
+    } @else {
+    <div class="login">
+        <h1>Register</h1>
+        <div class="details">
+            <label for="email" class="labeltext">Email</label>
+            <input type="email" name="email" [(ngModel)]="email" />
+            <label for="email" class="labeltext">Password</label>
+            <input type="password" name="password" [(ngModel)]="password" />
+            <div class="buttons">
+                <button (click)="registerGoogle()">Register with Google</button>
+                <button (click)="registerEmailPass()">Submit</button>
+            </div>
+        </div>
+    </div>
+    }
+    <div class="toggle">
+        @if(register == false){
+            <button (click)="toggleRegister()">Register</button>
+        } @else {
+            <button (click)="toggleRegister()">Login</button>
+        }
     </div>
 </div>

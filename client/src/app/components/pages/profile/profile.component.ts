@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Auth,  signOut } from '@angular/fire/auth';
+import { Auth,  User,  signOut } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,24 +10,28 @@ import { Auth,  signOut } from '@angular/fire/auth';
   styleUrl: './profile.component.scss'
 })
 export class ProfileComponent implements OnInit {
-  email: string | null = '';
-  password: string = '';
+
+  constructor(private router: Router) {}
+
   auth = inject(Auth)
+  loggedUser: User | undefined;
 
   ngOnInit(){
     this.auth.onAuthStateChanged((user) => {
       if (user) {
+        this.loggedUser = user;
+        console.log(user.displayName, user.email);
         console.log('User is signed in');
-        this.email = user.email;
       } else {
         console.log('No user is signed in');
       }
     });
   }
 
-  signout(){
+ signout(){
     signOut(this.auth).then(() => {
       console.log('Sign-out successful');
+      window.location.reload();
     }).catch((error) => {
       console.log('An error happened');
     });
